@@ -9,9 +9,10 @@ import "./App.css";
 // import the PostsPage and SearchBar and add them to the App
 import PostsPage from "./components/PostsContainer/PostsPage";
 import SearchBar from  "./components/SearchBar/SearchBarContainer";
-// import { dummyData } from "./dummy-data";
-const App = ()=> {
-  
+import dummyData from "./dummy-data";
+
+const App = () => {
+
 
   return (
     <div className="App">

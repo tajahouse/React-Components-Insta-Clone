@@ -1,8 +1,24 @@
 // You do not need to change any code in this file
 import React from "react";
 import "./SearchBar.css";
+import ReactDom from 'react-dom';
+import dummyData from "../../dummy-data";
 
-const SearchBar = () => {
+const SearchBar = props => {
+  console.log("Search props", props);
+  const [searchName, setSearchName] = React.useState("");
+  const [searchResults, setSearchResults] = React.useState([]);
+  
+  const handleChange = e => {
+    setSearchName(e.target.value);
+  };
+  // React.useEffect(()=> {
+  //   const results =dummyData.filter(user =>
+  //      user.username.toLowerCase().includes(searchName)
+  //   );
+    
+  //   setSearchName(results);
+  // }, );
   return (
     <div className="search-bar-wrapper">
       <div className="image-wrapper">
@@ -13,8 +29,10 @@ const SearchBar = () => {
       </div>
       <form className="search-form">
         <input
-          type="text"
+          type="search"
           placeholder="Search"
+          value={searchName}
+          onChange={handleChange}
         />
       </form>
       <div className="social-wrapper">
